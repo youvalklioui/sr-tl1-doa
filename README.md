@@ -80,7 +80,7 @@ python main.py create-dataset \
   --number_sources 10 \
   --min_freq_separation_factor 3 
 ```
-For each noise variance level $\sigma^{2}_{l}$, which are given by $\sigma^{2}_{l}\in \{10^{-4}, 10^{-3}, 10^{-1.5}, 1\}$ for the example above, $1000$ noisy measurement vectors $\mathbf{y}$ will be generated with zero-mean Gaussian noise $\mathbf{n}\sim(\mathbf{0}, \sigma^{2}_{l}\mathbf{I})$ , and each measurement vector will have $K=10$ sources with a minimum normalized frequency separation between any two sources given by `1/(min_freq_separation_factor * num_elements)`.
+For each noise variance level $\sigma^2_l$, which are given by $\sigma^2_l \in \\{10^{-4}, 10^{-3}, 10^{-1.5}, 1\\}$ for the example above, 1000 noisy measurement vectors $\mathbf{y}$ will be generated with zero-mean Gaussian noise $\mathbf{n} \sim \mathcal{N}(\mathbf{0}, \sigma^2_l \mathbf{I})$, and each measurement vector will have $K=10$ sources with a minimum normalized frequency separation between any two sources given by `1/(min_freq_separation_factor * num_elements)`.
 
 The generated dataset will have a unique tag corresponding to the configuration used (including the specific dictionary tag), and will be saved as a `dataset_tag.pt` file under `experiments_assets/datasets`. The configuration and the dictionary path will additionally be logged in `manifest_datasets.json` and `paths_datasets.json` with the same dataset tag under the same directory.
 ### Framework Performance Evaluation
