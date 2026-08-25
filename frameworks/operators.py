@@ -11,19 +11,9 @@ def prox_l1_norm(x, beta):
     return prox
 
 
-def prox_l2_norm(x,beta):
-    "Minimization of L1-2 for Compressed Sensing (https://epubs.siam.org/doi/epdf/10.1137/140952363)"
-    "Returns the proximal operator for the L2 norm evaluated at x with parameter beta"
-        
-    zeros = torch.zeros(x.size(), device=x.device)
-    prox = torch.exp(1j * x.angle()) * torch.max(
-        torch.abs(x) - beta, zeros
-    )
-    return prox
-
-
 
 def subgradient_l2_norm(x):
+    "Minimization of L1-2 for Compressed Sensing (https://epubs.siam.org/doi/epdf/10.1137/140952363)"
     "Returns the subgradient of the L2 norm evaluated at x"
 
     norm = torch.norm(x, dim=0, keepdim=True)
