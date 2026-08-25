@@ -25,7 +25,7 @@ git clone https://github.com/youvalklioui/sr-tl1-doa.git
 cd sr-tl1-doa
 
 conda create --name srtl1_env python=3.10
-conda activate srtl1_env_env
+conda activate srtl1_env
 pip install -r requirements.txt
 ```
 ## Replicating the Full Experiments
