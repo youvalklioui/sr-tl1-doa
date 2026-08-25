@@ -30,7 +30,7 @@ def subgradient_mcp_norm(x,gamma):
     "MCP(x, gamma) = ||x||_{1} - ( ||x||_{1} + 1 / (2 * gamma) * sum ( max( |xi| - gamma, 0) )^{2} )"
     "The Wirtinger gradient of the second term above is what this function returns."
     
-    subgrad = torch.exp(1j * x.angle()) * torch.where(torch.abs(x) <= gamma, x / (2 * gamma), torch.ones_like(x)/2)
+    subgrad = torch.exp(1j * x.angle()) * torch.where(torch.abs(x) <= gamma, torch.abs(x) / (2 * gamma), torch.ones_like(x)/2)
 
     return subgrad
 
